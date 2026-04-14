@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Input Mahasiswa</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="form-container" style="max-width: 500px;">
+    <h2>📝 Form Input Mahasiswa</h2>
+    <div class="identity">
+        🧑‍💻 WULANDHIKA KURNALIAWATI - 20240140064
+    </div>
+    <form method="post" action="/add">
+        <input type="text" name="nama" placeholder="Nama" required/>
+        <input type="text" name="nim" placeholder="NIM" required/>
+        <select name="jenisKelamin" required>
+            <option value="">Pilih Jenis Kelamin</option>
+            <option value="Laki-laki">Laki-laki</option>
+            <option value="Perempuan">Perempuan</option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+    <div class="btn-group">
+        <a href="/home" class="btn">Kembali ke Home</a>
+    </div>
+</div>
+</body>
+</html>

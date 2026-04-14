@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="home-container">
+    <h2>🏠 MY Website <span th:text="${nim}"></span></h2>
+    <div class="identity">
+        Selamat datang di aplikasi! <strong th:text="${nama}"></strong>
+    </div>
+
+    <div class="btn-group">
+        <a href="/form" class="btn">+ Input Data Mahasiswa</a>
+        <a href="/logout" class="btn btn-danger">Logout</a>
+    </div>
+
+    <h3>📋 Data Mahasiswa</h3>
+
+    <table>
+        <thead>
+        <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>NIM</th>
+            <th>Jenis Kelamin</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${dataMahasiswa.empty}">
+            <td colspan="4" class="kosong">Belum ada data</td>
+        </tr>
+        <tr th:each="mhs, status : ${dataMahasiswa}">
+            <td th:text="${status.count}"></td>
+            <td th:text="${mhs.nama}"></td>
+            <td th:text="${mhs.nim}"></td>
+            <td th:text="${mhs.jenisKelamin}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
